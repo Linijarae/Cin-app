@@ -19,7 +19,12 @@
         <button type="submit">Login</button>
     </form>
     <footer>
-        
+        <div>
+            <p>© ZdarkBlackShadow and Linijarae</p>
+        </div>
+        <div>
+            <a href="/cgu" target="_blank">CGU</a>
+        </div>
     </footer>
 </body>
 </html>
