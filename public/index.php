@@ -10,7 +10,7 @@ switch ($path) {
         break;
     case '/home':
         $titre = "Bienvenue"; 
-        require 'views/home.php';
+        require './src/views/home.php';
         break;
 
     case '/login':

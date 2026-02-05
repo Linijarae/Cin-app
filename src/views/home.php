@@ -10,7 +10,7 @@
         <nav>
             <ul>
                 <li>Home</li>
-                <?php (isset($_SESSION["connected"]) ? <div></div> : <div></div>  ?>
+                
             </ul>
         </nav>
     </header>
