@@ -5,6 +5,9 @@ $path = parse_url($uri, PHP_URL_PATH);
 
 switch ($path) {
     case '/':
+        $titre = "indexxxx"; 
+        require 'views/index.php';
+        break;
     case '/home':
         $titre = "Bienvenue"; 
         require 'views/home.php';

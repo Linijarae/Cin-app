@@ -12,10 +12,10 @@ switch ($path) {
     case '/':
         $moviesModel = new MoviesModel();
         $movies = $moviesModel->getAllMovies();
-        require 'index.php';
+        require 'views/index.php';
         break;
     default:
         http_response_code(404);
-        require 'pages/404.php';
+        require 'views/404.php';
         break;
 }
