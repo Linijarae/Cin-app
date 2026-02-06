@@ -6,7 +6,7 @@ $path = parse_url($uri, PHP_URL_PATH);
 switch ($path) {
     case '/':
         $titre = "indexxxx"; 
-        require 'views/index.php';
+        require './src/views/home.php';
         break;
     case '/home':
         $titre = "Bienvenue"; 
@@ -15,15 +15,15 @@ switch ($path) {
 
     case '/login':
         $titre = "Log in here";
-        require 'views/login.php';
+        require '../src/views/login.php';
         break;
 
     case '/profile':
-        require 'views/profile.php';
+        require './src/views/profile.php';
         break;
 
     default:
         http_response_code(404);
-        require 'pages/404.php';
+        require './src/views/404.php';
         break;
 }
