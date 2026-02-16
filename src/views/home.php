@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/style.css">
-    <style>
-        .films-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .film-card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .film-card img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .film-card h3 {
-            margin: 10px 0;
-        }
-        .film-card p {
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
     <header>
@@ -53,10 +27,10 @@
     <main class="container">
         <h1>Reserve your place</h1>
 
-        <div class="films-grid">
+        <div class="movies-grid">
             <?php if (!empty($movies)): ?>
                 <?php foreach ($movies as $movie): ?>
-                    <div class="film-card">
+                    <div class="movie-card">
                         <img src="<?php echo htmlspecialchars($movie['image_url']); ?>" alt="<?php echo htmlspecialchars($movie['name']); ?>">
                         <h3><?php echo htmlspecialchars($movie['name']); ?></h3>
                         <p><?php echo substr(htmlspecialchars($movie['synopsis']), 0, 100); ?>...</p>
