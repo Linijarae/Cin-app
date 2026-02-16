@@ -10,7 +10,7 @@ switch ($path) {
         break;
     case '/index':
         $titre = "Index";
-        require './src/views/index.php';
+        require '../src/views/index.php';
         break;
     case '/home':
         $titre = "Bienvenue"; 
@@ -19,27 +19,27 @@ switch ($path) {
 
     case '/login':
         $titre = "Log in here";
-        require './src/views/login.php';
+        require '../src/views/login.php';
         break;
 
     case '/profile':
-        require './src/views/profile.php';
+        require '../src/views/profile.php';
         break;
     case '/register':
         $titre = "Register";
-        require './src/views/register.php';
+        require '../src/views/register.php';
         break;
     case '/reservation':
         $titre = "Reservation";
-        require './src/views/reservation.php';
+        require '../src/views/reservation.php';
         break;
     case '/setings':
         $titre = "Settings";
-        require './src/views/setings.php';
+        require '../src/views/setings.php';
         break;
     case '/cgu':
         $titre = "CGU";
-        require './src/views/cgu.php';
+        require '../src/views/cgu.php';
         break;
 
     default:
