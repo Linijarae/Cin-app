@@ -1,6 +1,13 @@
 CREATE DATABASE IF NOT EXISTS cin_app;
 USE cin_app;
 
+-- Table de suivi des migrations
+CREATE TABLE IF NOT EXISTS migrations (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     login VARCHAR(25) NOT NULL UNIQUE,
@@ -16,6 +23,9 @@ CREATE TABLE movies (
     image_url VARCHAR(150),
     release_date DATE
 );
+
+-- Enregistrement de la migration initiale
+INSERT INTO migrations (name) VALUES ('001_init_database');
 
 -- Valeurs d'exemple :
 
