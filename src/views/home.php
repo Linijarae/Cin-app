@@ -36,7 +36,7 @@
                             <h3><?php echo htmlspecialchars($movie['titre']); ?></h3>
                             <p class="film-desc"><?php echo htmlspecialchars($movie['description']); ?></p>
                             
-                            <a href="/reserve?id=<?php echo $movie['id']; ?>" class="btn-reserver">
+                            <a href="/reserve?id=<?php echo $movie['id']; ?>" class="btn-reserve">
                                 Reserve
                             </a>
                         </div>

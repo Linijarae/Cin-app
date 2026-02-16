@@ -19,11 +19,14 @@
         <button type="submit">Login</button>
     </form>
     <footer>
-        <div>
+        <div class="footer-element">
             <p>© ZdarkBlackShadow and Linijarae</p>
         </div>
-        <div>
-            <a href="/cgu" target="_blank">CGU</a>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+        <div class="footer-element">
+            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
         </div>
     </footer>
 </body>
