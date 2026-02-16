@@ -1,6 +1,9 @@
 RewriteEngine On
-# Si le fichier ou dossier demandé existe vraiment, on le sert directement (css, images...)
+
+# Si le fichier existe (ex: /css/style.css), on le sert tel quel
 RewriteCond %{REQUEST_FILENAME} !-f
+# Si le dossier existe, on le sert
 RewriteCond %{REQUEST_FILENAME} !-d
+
 # Sinon, on envoie tout vers index.php
-RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteRule ^ index.php [L,QSA]

@@ -5,5 +5,5 @@ Une petite application web en PHP, pour réserver vos places de cinéma. Manipul
 Pour lancer :
 
 ```bash
-php -S localhost:8000 ./public/index.php
+cd public && php -S localhost:8000
 ```
