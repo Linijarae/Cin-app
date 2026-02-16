@@ -4,8 +4,7 @@
 
 ```
 migrations/
-├── 001_init_database.php
-└── 002_add_feature.php (futur)
+└── 001_init_database.php
 ```
 
 ## Utilisation
