@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .film-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .film-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .film-card h3 {
+            margin: 10px 0;
+        }
+        .film-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li>Home</li>
+                <li><a href="/home">Home</a></li>
                 <?php if (isset($_SESSION["login"])): ?>
                 <li>
                     <a href="/logout">Logout</a>
@@ -27,26 +55,23 @@
 
         <div class="films-grid">
             <?php if (!empty($movies)): ?>
-                <?php foreach ($movie as $movies): ?>
-                    <article class="film-card">
-                        <div class="film-image">
-                            <img src="img/film_<?php echo $movie['id']; ?>.jpg" alt="<?php echo htmlspecialchars($movie['titre']); ?>">
-                        </div>
-                        <div class="film-content">
-                            <h3><?php echo htmlspecialchars($movie['titre']); ?></h3>
-                            <p class="film-desc"><?php echo htmlspecialchars($movie['description']); ?></p>
-                            
-                            <a href="/reserve?id=<?php echo $movie['id']; ?>" class="btn-reserve">
-                                Reserve
-                            </a>
-                        </div>
-                    </article>
+                <?php foreach ($movies as $movie): ?>
+                    <div class="film-card">
+                        <img src="<?php echo htmlspecialchars($movie['image_url']); ?>" alt="<?php echo htmlspecialchars($movie['name']); ?>">
+                        <h3><?php echo htmlspecialchars($movie['name']); ?></h3>
+                        <p><?php echo substr(htmlspecialchars($movie['synopsis']), 0, 100); ?>...</p>
+                        <small><?php echo htmlspecialchars($movie['release_date']); ?></small>
+                        <br><br>
+                        <a href="/reservation?movie_id=<?php echo $movie['id']; ?>">Reserve</a>
+                    </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Aucun film disponible pour le moment.</p>
+                <p>No movies available.</p>
             <?php endif; ?>
         </div>
     </main>
-    <h1>Reserve your place fort the virtual cinema</h1>
+    <footer>
+        <p>&copy; 2026 Cin-app. All rights reserved.</p>
+    </footer>
 </body>
 </html>

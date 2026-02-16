@@ -1,5 +1,6 @@
-<?php 
-require_once 'classes/database.php';
+<?php
+
+require_once __DIR__ . '/../classes/database.php';
 
 class MoviesModel {
     private $db;

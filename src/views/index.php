@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <h1>Welcome</h1>
         <nav>
             <ul>
                 <li><a href="/home">Home</a></li>
@@ -17,8 +16,10 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <p>Index page.</p>
+    <main class="container">
+        <h1>Welcome to Cin-app</h1>
+        <p>Discover and book your favorite movies online.</p>
+        <a href="/home" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">Browse Movies</a>
     </main>
 </body>
 </html>
