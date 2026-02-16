@@ -1,12 +1,15 @@
-CREATE DATABASE IF NOT EXISTS cin_app;
+-- On supprime l'ancienne base pour repartir propre (ATTENTION : supprime les données existantes)
+DROP DATABASE IF EXISTS cin_app;
+
+-- On recrée avec le bon encodage
+CREATE DATABASE cin_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE cin_app;
 
--- Table de suivi des migrations
-CREATE TABLE IF NOT EXISTS migrations (
+CREATE TABLE migrations (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL UNIQUE,
     applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -14,7 +17,7 @@ CREATE TABLE users (
     email VARCHAR(100) NOT NULL UNIQUE, 
     password VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE movies (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,13 +25,11 @@ CREATE TABLE movies (
     synopsis TEXT,
     image_url VARCHAR(150),
     release_date DATE
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Enregistrement de la migration initiale
 INSERT INTO migrations (name) VALUES ('001_init_database');
 
--- Valeurs d'exemple :
-
+-- Tes données seront maintenant bien interprétées
 INSERT INTO movies (name, synopsis, image_url, release_date) VALUES 
 ('Inception', 'Dom Cobb est un voleur expérimenté...', 'https://example.com/images/inception.jpg', '2010-07-16'),
 ('Le Parrain', 'L''histoire de la famille Corleone...', '/assets/posters/godfather.png', '1972-03-24');

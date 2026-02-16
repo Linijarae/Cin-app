@@ -71,7 +71,15 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2026 Cin-app. All rights reserved.</p>
+        <div class="footer-element">
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
+        </div>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+        <div class="footer-element">
+            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
+        </div>
     </footer>
 </body>
 </html>
