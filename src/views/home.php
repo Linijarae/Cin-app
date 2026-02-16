@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li>Home</li>
+            <a href="/" class="nav-logo">
+                <img src="logo.png" alt="Logo Cinéma">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                
                 <?php if (isset($_SESSION["login"])): ?>
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
+                    <li>
+                        <a href="/logout" class="btn-auth">Logout</a>
+                    </li>
                 <?php else: ?>
-                <li>
-                    <a href="/login">Login</a>
-                </li>
+                    <li>
+                        <a href="/login" class="btn-auth">Login</a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </nav>
@@ -30,7 +37,7 @@
                 <?php foreach ($movie as $movies): ?>
                     <article class="film-card">
                         <div class="film-image">
-                            <img src="img/film_<?php echo $movie['id']; ?>.jpg" alt="<?php echo htmlspecialchars($movie['titre']); ?>">
+                            <img src="img/image<?php echo $movie['id']; ?>.jpg" alt="<?php echo htmlspecialchars($movie['titre']); ?>">
                         </div>
                         <div class="film-content">
                             <h3><?php echo htmlspecialchars($movie['titre']); ?></h3>
@@ -43,10 +50,20 @@
                     </article>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Aucun film disponible pour le moment.</p>
+                <p>Empty movie list</p>
             <?php endif; ?>
         </div>
     </main>
-    <h1>Reserve your place fort the virtual cinema</h1>
+        <footer>
+        <div class="footer-element">
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
+        </div>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+        <div class="footer-element">
+            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
+        </div>
+    </footer>
 </body>
 </html>
