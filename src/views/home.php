@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/style.css">
+<<<<<<< HEAD
     <style>
         .films-grid {
             display: grid;
@@ -32,20 +33,33 @@
             color: #666;
         }
     </style>
+=======
+    <link rel="stylesheet" href="/css/home.css">
+>>>>>>> 856357a28817b1b7382c9e7e5e40222c3345488d
 </head>
 <body>
     <header>
         <nav>
+<<<<<<< HEAD
             <ul>
                 <li><a href="/home">Home</a></li>
+=======
+            <a href="/" class="nav-logo">
+                <img src="logo.png" alt="Logo Cinéma">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                
+>>>>>>> 856357a28817b1b7382c9e7e5e40222c3345488d
                 <?php if (isset($_SESSION["login"])): ?>
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
+                    <li>
+                        <a href="/logout" class="btn-auth">Logout</a>
+                    </li>
                 <?php else: ?>
-                <li>
-                    <a href="/login">Login</a>
-                </li>
+                    <li>
+                        <a href="/login" class="btn-auth">Login</a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </nav>
