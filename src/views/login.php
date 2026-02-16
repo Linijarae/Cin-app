@@ -20,7 +20,7 @@
     </form>
     <footer>
         <div class="footer-element">
-            <p>© ZdarkBlackShadow and Linijarae</p>
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
         </div>
         <div class="footer-element">
             <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
