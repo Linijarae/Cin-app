@@ -11,7 +11,11 @@ class Database {
 
     private function __construct() {
         try {
-            $this->connection = new PDO("mysql:host={$this->host};dbname={$this->db_name}", $this->username, $this->password);
+            $this->connection = new PDO(
+                "mysql:host={$this->host};dbname={$this->db_name};charset=utf8mb4",
+                $this->username,
+                $this->password
+            );
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "Connection error: " . $e->getMessage();
@@ -23,5 +27,9 @@ class Database {
             self::$instance = new Database();
         }
         return self::$instance;
+    }
+
+    public function getConnection() {
+        return $this->connection;
     }
 }
