@@ -28,6 +28,27 @@ CREATE TABLE movies (
     release_date DATE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Table reservations
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    movie_id INT NOT NULL,
+    number_of_seats INT NOT NULL DEFAULT 1,
+    total_price DECIMAL(10, 2),
+    screening_date DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_reservations_user 
+        FOREIGN KEY (user_id) 
+        REFERENCES users(id) 
+        ON DELETE CASCADE,
+        
+    CONSTRAINT fk_reservations_movie
+        FOREIGN KEY (movie_id) 
+        REFERENCES movies(id) 
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 INSERT INTO migrations (name) VALUES ('001_init_database');
 
 INSERT INTO movies (name, synopsis, image_url, release_date) VALUES 
