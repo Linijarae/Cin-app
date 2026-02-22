@@ -43,8 +43,8 @@
         <h1>Now Showing</h1>
 
         <div style="background: linear-gradient(135deg, var(--dark-navy), var(--blue)); color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid var(--gold);">
-            <h2 style="color: var(--gold); margin-top: 0;">🎬 Ouvert 7 jours sur 7</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 15px;">Notre cinéma vous accueille tous les jours avec des séances à :</p>
+            <h2 style="color: var(--gold); margin-top: 0;">🎬 Open 7 Days a Week</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;">Our cinema welcomes you every day with screenings at:</p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
                 <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center;">
                     <strong style="font-size: 1.3rem; color: var(--gold);">14h00</strong>
@@ -59,7 +59,7 @@
                     <strong style="font-size: 1.3rem; color: var(--gold);">22h30</strong>
                 </div>
             </div>
-            <p style="font-size: 0.95rem; margin-top: 15px; opacity: 0.9;">Réservez vos places dès maintenant pour profiter du meilleur du cinéma !</p>
+            <p style="font-size: 0.95rem; margin-top: 15px; opacity: 0.9;">Book your seats now to enjoy the best of cinema!</p>
         </div>
 
         <div class="movies-grid">
