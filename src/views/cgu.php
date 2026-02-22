@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service</title>
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        main h1 { color: var(--dark-navy); }
+        main h2 { color: var(--blue); }
+        main section { margin-bottom: 20px; padding: 15px; border-left: 4px solid var(--gold); background: rgba(218,165,32,0.05); border-radius: 4px; }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/login">Login</a></li>
+        <nav class="container">
+            <ul class="nav-links" style="display: flex; align-items: center; justify-content: space-between; padding: 0; margin: 0;">
+                <li style="list-style: none;"><a href="/home" class="nav-logo">🎬 CineApp</a></li>
+                
+                <div style="display: flex; gap: 15px; list-style: none; align-items: center;">
+                    <li style="list-style: none;"><a href="/home">Movies</a></li>
+                    <li style="list-style: none;"><a href="/login">Login</a></li>
+                </div>
             </ul>
         </nav>
     </header>
@@ -30,5 +39,14 @@
             <p>Le contenu est protégé par les droits d'auteur.</p>
         </section>
     </main>
+    
+    <footer>
+        <div class="footer-element">
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
+        </div>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+    </footer>
 </body>
 </html>

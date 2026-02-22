@@ -21,18 +21,18 @@
 <body>
     <header>
         <nav class="container">
-            <ul style="display: flex; align-items: center; justify-content: space-between;">
-                <li><a href="/home" style="font-size: 1.2rem;">🎬 CineApp</a></li>
+            <ul class="nav-links" style="display: flex; align-items: center; justify-content: space-between; padding: 0; margin: 0;">
+                <li style="list-style: none;"><a href="/home" class="nav-logo">🎬 CineApp</a></li>
                 
-                <div style="display: flex; gap: 15px;">
-                    <li><a href="/home">Movies</a></li>
+                <div style="display: flex; gap: 15px; list-style: none; align-items: center;">
+                    <li style="list-style: none;"><a href="/home">Movies</a></li>
                     
                     <?php if (isset($_SESSION["user_id"])): ?>
-                        <li><a href="/profile">My Profile</a></li>
-                        <li><a href="/logout" class="btn-auth" style="color: red;">Logout (<?= htmlspecialchars($_SESSION['login'] ?? '') ?>)</a></li>
+                        <li style="list-style: none;"><a href="/profile">My Profile</a></li>
+                        <li style="list-style: none;"><a href="/logout" class="btn-auth">Logout (<?= htmlspecialchars($_SESSION['login'] ?? '') ?>)</a></li>
                     <?php else: ?>
-                        <li><a href="/register">Register</a></li>
-                        <li><a href="/login" class="btn-auth">Login</a></li>
+                        <li style="list-style: none;"><a href="/register">Register</a></li>
+                        <li style="list-style: none;"><a href="/login" class="btn-auth">Login</a></li>
                     <?php endif; ?>
                 </div>
             </ul>
@@ -41,6 +41,26 @@
 
     <main class="container">
         <h1>Now Showing</h1>
+
+        <div style="background: linear-gradient(135deg, var(--dark-navy), var(--blue)); color: white; padding: 30px; border-radius: 10px; margin-bottom: 40px; border-left: 5px solid var(--gold);">
+            <h2 style="color: var(--gold); margin-top: 0;">🎬 Ouvert 7 jours sur 7</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;">Notre cinéma vous accueille tous les jours avec des séances à :</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.3rem; color: var(--gold);">14h00</strong>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.3rem; color: var(--gold);">17h00</strong>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.3rem; color: var(--gold);">20h00</strong>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center;">
+                    <strong style="font-size: 1.3rem; color: var(--gold);">22h30</strong>
+                </div>
+            </div>
+            <p style="font-size: 0.95rem; margin-top: 15px; opacity: 0.9;">Réservez vos places dès maintenant pour profiter du meilleur du cinéma !</p>
+        </div>
 
         <div class="movies-grid">
             <?php if (!empty($movies)): ?>

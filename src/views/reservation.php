@@ -6,28 +6,32 @@
     <title><?= isset($titre) ? $titre : 'Reservation' ?></title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
-        /* Un peu de CSS inline pour dépanner si ton style.css n'est pas prêt */
         .reservation-container { display: flex; gap: 2rem; margin-top: 20px; }
         .movie-info { flex: 1; text-align: center; }
         .movie-info img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .booking-form { flex: 1; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+        .booking-form { flex: 1; padding: 20px; background: #f9f9f9; border-radius: 8px; border: 2px solid var(--gold); }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--dark-navy); }
+        .form-group input, .form-group select { width: 100%; padding: 8px; border: 1px solid var(--gold); border-radius: 4px; }
         .alert { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
         .alert.error { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
         .alert.success { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
-        .btn-submit { background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer; width: 100%; font-size: 16px; }
-        .btn-submit:hover { background-color: #555; }
+        .btn-submit { background-color: var(--blue); color: white; padding: 10px 20px; border: none; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; border-radius: 4px; }
+        .btn-submit:hover { background-color: var(--dark-navy); }
+        .movie-info h2 { color: var(--dark-navy); }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/profile">My Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
+        <nav class="container">
+            <ul class="nav-links" style="display: flex; align-items: center; justify-content: space-between; padding: 0; margin: 0;">
+                <li style="list-style: none;"><a href="/home" class="nav-logo">🎬 CineApp</a></li>
+                
+                <div style="display: flex; gap: 15px; list-style: none; align-items: center;">
+                    <li style="list-style: none;"><a href="/home">Movies</a></li>
+                    <li style="list-style: none;"><a href="/profile">My Profile</a></li>
+                    <li style="list-style: none;"><a href="/logout" class="btn-auth">Logout</a></li>
+                </div>
             </ul>
         </nav>
     </header>
@@ -94,6 +98,18 @@
         <?php endif; ?>
 
     </main>
+
+    <footer>
+        <div class="footer-element">
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
+        </div>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+        <div class="footer-element">
+            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
+        </div>
+    </footer>
 
     <script>
         const seatsInput = document.getElementById('seats');

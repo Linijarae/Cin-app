@@ -7,23 +7,33 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
     <style>
-        .form-container { max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .form-container { max-width: 400px; margin: 50px auto; padding: 20px; border: 2px solid var(--gold); border-radius: 8px; }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .form-group button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; }
-        .form-group button:hover { background: #218838; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--dark-navy); }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid var(--gold); border-radius: 4px; box-sizing: border-box; }
+        .form-group button { width: 100%; padding: 10px; background: var(--gold); color: var(--dark-navy); border: none; border-radius: 4px; cursor: pointer; font-size: 1em; font-weight: bold; }
+        .form-group button:hover { background: #c09000; }
         .message { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
         .message.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         .message.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .form-footer { text-align: center; margin-top: 15px; }
-        .form-footer a { color: #007bff; text-decoration: none; }
+        .form-footer a { color: var(--blue); text-decoration: none; }
         .form-footer a:hover { text-decoration: underline; }
+        .form-container h1 { color: var(--dark-navy); text-align: center; }
     </style>
 </head>
 <body>
     <header>
-        <img src="/logo.png" alt="Logo">
+        <nav class="container">
+            <ul class="nav-links" style="display: flex; align-items: center; justify-content: space-between; padding: 0; margin: 0;">
+                <li style="list-style: none;"><a href="/home" class="nav-logo">🎬 CineApp</a></li>
+                
+                <div style="display: flex; gap: 15px; list-style: none; align-items: center;">
+                    <li style="list-style: none;"><a href="/home">Movies</a></li>
+                    <li style="list-style: none;"><a href="/login">Login</a></li>
+                </div>
+            </ul>
+        </nav>
     </header>
     <main class="form-container">
         <h1>Register</h1>
@@ -63,8 +73,5 @@
         </div>
     </main>
     
-            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
-        </div>
-    </footer>
-</body>
-</html>
+    <footer>
+        <div class="footer-element">

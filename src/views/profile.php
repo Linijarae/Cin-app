@@ -6,24 +6,32 @@
     <title>My Profile</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
-        .profile-header { background: #f4f4f4; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .profile-header { background: linear-gradient(135deg, var(--blue), var(--dark-navy)); padding: 20px; border-radius: 8px; margin-bottom: 20px; color: white; border-left: 5px solid var(--gold); }
         .res-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         .res-table th, .res-table td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
-        .res-table th { background-color: #333; color: white; }
-        .btn-cancel { background-color: #ff9800; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; }
-        .btn-delete-account { background-color: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; }
-        .danger-zone { margin-top: 40px; padding: 20px; border: 1px solid #f44336; border-radius: 8px; }
+        .res-table th { background-color: var(--dark-navy); color: white; }
+        .btn-cancel { background-color: var(--gold); color: var(--dark-navy); padding: 5px 10px; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; font-weight: bold; }
+        .btn-cancel:hover { background-color: #c09000; }
+        .btn-delete-account { background-color: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; font-weight: bold; }
+        .btn-delete-account:hover { background-color: #da190b; }
+        .danger-zone { margin-top: 40px; padding: 20px; border: 2px solid var(--gold); border-radius: 8px; background: rgba(255,215,0,0.05); }
+        .danger-zone h3 { color: var(--dark-navy); }
         .status-message { padding: 10px; margin-bottom: 10px; border-radius: 4px; }
         .success { background-color: #dff0d8; color: #3c763d; }
         .error { background-color: #f2dede; color: #a94442; }
+        .profile-header h1 { color: var(--gold); margin-top: 0; }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <ul style="display: flex; gap: 15px; list-style:none;">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/logout">Logout</a></li>
+            <ul class="nav-links" style="display: flex; align-items: center; justify-content: space-between; padding: 0; margin: 0;">
+                <li style="list-style: none;"><a href="/home" class="nav-logo">🎬 CineApp</a></li>
+                
+                <div style="display: flex; gap: 15px; list-style: none; align-items: center;">
+                    <li style="list-style: none;"><a href="/home">Movies</a></li>
+                    <li style="list-style: none;"><a href="/logout" class="btn-auth">Logout</a></li>
+                </div>
             </ul>
         </nav>
     </header>
@@ -93,5 +101,17 @@
             </form>
         </section>
     </main>
+    
+    <footer>
+        <div class="footer-element">
+            <p>© <a class="footer-link" target="_blank" href="https://github.com/ZdarkBlackShadow">ZdarkBlackShadow</a> and <a class="footer-link" target="_blank" href="https://github.com/Linijarae">Linijarae</a></p>
+        </div>
+        <div class="footer-element">
+            <p>Graphist : <a class="footer-link" target="_blank" href="https://gemini.google.com">Gemini</a></p>
+        </div>
+        <div class="footer-element">
+            <a class="footer-link" href="/cgu" target="_blank">CGU</a>
+        </div>
+    </footer>
 </body>
 </html>
