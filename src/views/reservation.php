@@ -39,7 +39,7 @@
     <main class="container">
         <h1>Book Your Seats</h1>
 
-        <?php if (isset($error)): ?>
+        <?php if (isset($error) && !empty($error)): ?>
             <div class="alert error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
@@ -48,7 +48,7 @@
                 <?= htmlspecialchars($success) ?>
                 <p><a href="/profile">View my reservations</a> or <a href="/home">Back to movies</a></p>
             </div>
-        <?php elseif (isset($movie) && $movie): ?>
+        <?php elseif (!empty($movie) && is_array($movie)): ?>
             <div class="reservation-container">
                 
                 <div class="movie-info">
@@ -92,7 +92,7 @@
 
         <?php else: ?>
             <div style="text-align: center; margin-top: 50px;">
-                <p>No movie selected. Please go back to the home page and select a movie to book.</p>
+                <p><?= isset($error) ? htmlspecialchars($error) : "No movie selected. Please go back to the home page and select a movie to book." ?></p>
                 <a href="/home" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto;">Browse Movies</a>
             </div>
         <?php endif; ?>

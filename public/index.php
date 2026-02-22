@@ -141,8 +141,8 @@ switch ($path) {
         $data = $profileController->index();
         
         // Extraire les variables pour la vue ($user et $reservations)
-        $user = $data['user'];
-        $reservations = $data['reservations'];
+        $user = (is_array($data) && isset($data['user'])) ? $data['user'] : null;
+        $reservations = (is_array($data) && isset($data['reservations'])) ? $data['reservations'] : [];
 
         // Petit gestionnaire de messages via URL (suite aux redirections POST)
         if (isset($_GET['msg']) && $_GET['msg'] == 'cancelled') {
@@ -169,10 +169,20 @@ switch ($path) {
         // On récupère les infos du film pour pré-remplir le formulaire
         $movieId = $_GET['id'] ?? null;
         $movie = null;
+        $error = null;
         
         if ($movieId) {
-            $moviesModel = new MoviesModel();
-            $movie = $moviesModel->getMovie($movieId); // Assure-toi que cette méthode existe dans MoviesModel
+            try {
+                $moviesModel = new MoviesModel();
+                $movie = $moviesModel->getMovie($movieId);
+                if (!$movie) {
+                    $error = "Film not found. ID: " . htmlspecialchars($movieId);
+                }
+            } catch (Exception $e) {
+                $error = "Error loading movie: " . $e->getMessage();
+            }
+        } else {
+            $error = "No movie selected. Please go back to the home page and select a movie to book.";
         }
         
         require '../src/views/reservation.php';

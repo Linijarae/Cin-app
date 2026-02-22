@@ -44,7 +44,7 @@
         <?php endif; ?>
 
         <section class="profile-header">
-            <?php if(isset($user)): ?>
+            <?php if(isset($user) && is_array($user) && !empty($user['login'])): ?>
                 <h1>Hello, <?= htmlspecialchars($user['login']) ?></h1>
                 <p>Email: <?= htmlspecialchars($user['email']) ?></p>
                 <p>Member since: <?= htmlspecialchars(date('F Y', strtotime($user['created_at']))) ?></p>
